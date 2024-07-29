@@ -542,8 +542,7 @@ namespace OpenHardwareMonitor.GUI {
         foreach (ISensor sensor in pair.Value) {
           int remainingWidth;
 
-
-          if ((sensor.SensorType != SensorType.Load &&
+          if ((/* sensor.SensorType != SensorType.Load && */
                sensor.SensorType != SensorType.Control &&
                sensor.SensorType != SensorType.Level) || !sensor.Value.HasValue) 
           {
@@ -575,6 +574,12 @@ namespace OpenHardwareMonitor.GUI {
                   break;
                 case SensorType.SmallData:
                   format = "{0:F1} MB";
+                  break;
+                case SensorType.Load:
+                  format = "{0:F2} %";
+                  break;
+                case SensorType.Energy:
+                  format = "{0:F0} mWh";
                   break;
               }
 

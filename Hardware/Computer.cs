@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Security.Permissions;
+using System.Windows.Forms;
 using System.Reflection;
 
 namespace OpenHardwareMonitor.Hardware {
@@ -111,6 +112,9 @@ namespace OpenHardwareMonitor.Hardware {
 
       if (hddEnabled)
         Add(new HDD.HarddriveGroup(settings));
+
+      if (SystemInformation.PowerStatus.BatteryChargeStatus != BatteryChargeStatus.NoSystemBattery)
+        Add(new Battery.BatteryGroup(settings));
     }
 
     public void Reset() {

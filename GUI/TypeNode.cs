@@ -78,6 +78,10 @@ namespace OpenHardwareMonitor.GUI {
           this.Image = Utilities.EmbeddedResources.GetImage("throughput.png");
           this.Text = "Throughput";
           break;
+        case SensorType.Energy:
+          this.Image = Utilities.EmbeddedResources.GetImage("load.png");
+          this.Text = "Capacity";
+          break;
       }
 
       NodeAdded += new NodeEventHandler(TypeNode_NodeAdded);
