@@ -578,7 +578,7 @@ namespace OpenHardwareMonitor.GUI {
                 case SensorType.Load:
                   format = "{0:F2} %";
                   break;
-                case SensorType.Energy:
+                case SensorType.Capacity:
                   format = "{0:F0} mWh";
                   break;
               }

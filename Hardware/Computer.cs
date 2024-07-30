@@ -113,7 +113,7 @@ namespace OpenHardwareMonitor.Hardware {
       if (hddEnabled)
         Add(new HDD.HarddriveGroup(settings));
 
-      if (SystemInformation.PowerStatus.BatteryChargeStatus != BatteryChargeStatus.NoSystemBattery)
+      if ((SystemInformation.PowerStatus.BatteryChargeStatus != BatteryChargeStatus.NoSystemBattery) && (SystemInformation.PowerStatus.BatteryChargeStatus != BatteryChargeStatus.Unknown))
         Add(new Battery.BatteryGroup(settings));
     }
 
